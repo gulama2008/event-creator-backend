@@ -50,13 +50,12 @@ public class Event {
     @Column
     @Getter
     @Setter
-    private String label;
+    private String[] label;
 
     public Event() {
     }
     
-    public Event(Long id, String eventName, String startDate,String startTime, String endDate, String endTime, String location, String label) {
-    this.id = id;
+    public Event(String eventName, String startDate,String startTime, String endDate, String endTime, String location, String[] label) {
     this.eventName = eventName;
     this.startDate = startDate;
     this.startTime = startTime;

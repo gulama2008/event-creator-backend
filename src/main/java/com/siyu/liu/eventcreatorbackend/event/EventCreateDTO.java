@@ -34,8 +34,7 @@ public class EventCreateDTO {
     @Setter
     private String location;
 
-    @NotBlank
     @Getter
     @Setter
-    private String label;
+    private String[] label;
 }

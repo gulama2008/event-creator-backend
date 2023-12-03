@@ -30,5 +30,5 @@ public class EventUpdateDTO {
 
     @Getter
     @Setter
-    private String label;
+    private String[] label;
 }

@@ -25,7 +25,15 @@ public class EventService {
     }
 
     public Event createEvent(EventCreateDTO data) {
-        Event newEvent = modelMapper.map(data, Event.class);
+        String eventName=data.getEventName();
+        String startDate=data.getStartDate();
+        String startTime=data.getStartTime();
+        String endDate=data.getEndDate();
+        String endTime=data.getEndTime();
+        String location=data.getLocation();
+        String[] label=data.getLabel();
+        Event newEvent = new Event(eventName, startDate, startTime, endDate, endTime, location, label);
+        // Event newEvent = modelMapper.map(data, Event.class);
         Event created = this.eventRepository.save(newEvent);
         return created;
     }
@@ -41,9 +49,17 @@ public class EventService {
     
     public Optional<Event> updateById(Long id, EventUpdateDTO data) {
     Optional<Event> foundEvent = this.getById(id);
-    if(foundEvent.isPresent()) {
+    if (foundEvent.isPresent()) {
+        
         Event toUpdate = foundEvent.get();
-        modelMapper.map(data, toUpdate);
+        toUpdate.setEventName(data.getEventName());
+        toUpdate.setStartDate(data.getStartDate());
+        toUpdate.setStartTime(data.getStartTime());
+        toUpdate.setEndDate(data.getEndDate());
+        toUpdate.setEndTime(data.getEndTime());
+        toUpdate.setEventName(data.getEventName());
+        toUpdate.setLocation(data.getLocation());
+        toUpdate.setLabel(data.getLabel());
         Event updatedEvent = this.eventRepository.save(toUpdate);
         return Optional.of(updatedEvent);
     }
