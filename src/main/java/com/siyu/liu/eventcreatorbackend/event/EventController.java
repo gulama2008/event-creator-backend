@@ -43,7 +43,7 @@ public class EventController {
     }
 
     @PostMapping
-    public ResponseEntity<Event> createEmployee(@Valid @RequestBody EventCreateDTO data) {
+    public ResponseEntity<Event> createEvent(@Valid @RequestBody EventCreateDTO data) {
         Event newEvent = this.eventService.createEvent(data);
         return new ResponseEntity<Event>(newEvent, HttpStatus.CREATED);
     }
