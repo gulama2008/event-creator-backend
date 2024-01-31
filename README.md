@@ -28,22 +28,15 @@ This is the Spring Boot backend of the events calender app. It allows users perf
 
 ## Requirements
 ### MVP
-Create a page that displays a calendar. The calendar should include a title showing the current month and a grid of days (Please note that you DO NOT have to use css grid to style it).
+The user should be able to do the following:
 
--   Each of the days cells should be clickable.
--   The user should be able to navigate between months - view the upcoming month, previous month etc.
--   When a user click on a chosen day, a modal should appear
--   The modal should include a form with the following fields:
-    -   Event Name
-    -   Start Date
-    -   End date
-    -   Location
-    -   Label
-
--   When an event is created, a card component should be displayed on the corresponding date cell of the calendar.
--   The event card component should also be clickable and display a modal with event details and a countdown timer showing the time remaining until the event.
--   When a user tries to add an event with a start date in the past, an error message should appear.
--   The user should be able to filter the calendar by labels or location, allowing them to view specific events based on their preferences.
+-   Create a new event
+-   Update an existing future event
+-   Delete an event
+-   Retrieve all events from the database
+-   Retrieve a single event from the database
+-   Filter events by labels
+-   Filter events by location
 
 
 ## Features
